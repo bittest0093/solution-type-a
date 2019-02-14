@@ -13,32 +13,29 @@ public class Main {
 		int S=0,B=0,O=0;
 		boolean flag;
 
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = rd.nextInt(9)+1;
-			
-			for (int j=0; j<arr.length; j++) {
-				if(arr[i]==arr[j]) {
-					arr[j]=rd.nextInt(9)+1;
-				}
-			}
-		}
+		int num=0;
+		flag=false;
 		for(int i=0; i<arr.length; i++) {
-		answer[i]=sc.nextInt();
-		}
-		for(int i=0; i<=arr.length; i++) {
-			if(arr[i]==answer[i]) {
-				S++;
+			flag=true;
+			while(flag) {
+				num=rd.nextInt(9)+1;
+				flag=false;
 			}
-			for(int j=1; j<=arr.length; j++) {
-				if(arr[i]==answer[j]) {
-					B++;
-				}
-				else {
-					O++;
+			for(int j=0; j<arr.length; j++) {
+				if(arr[i]==num) {
+					flag=true;
+					break;
 				}
 			}
+			arr[i]=num;
 		}
 		
-
+		while(true) {
+			int num2=sc.nextInt();
+			for(int i=0; i<answer.length; i++) {
+				answer[i]=num2;
+			}
+			
+		}
 	}
 }
